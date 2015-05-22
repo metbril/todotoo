@@ -50,17 +50,17 @@ def read_todos(todo_filepath):
     return todos
 
 def list_todos(results, numbers = 1):
-	if len(results) == 0:
-	    #empty list
-		print("No results.")
-	else:
-		i = 1
-		for item in results:
-			if numbers == 1:
-				print("{0}. {1}".format(i, item))
-			else:
-				print(item)
-			i += 1
+    if len(results) == 0:
+        #empty list
+        print("No results.")
+    else:
+        i = 1
+        for item in results:
+            if numbers == 1:
+                print("{0}. {1}".format(i, item))
+            else:
+                print(item)
+            i += 1
 
 if __name__ == "__main__":
     args = todo_arguments()
