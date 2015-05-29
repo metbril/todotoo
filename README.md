@@ -1,9 +1,10 @@
 # todo
-Command Line Interface tot manage tasks in todo.txt
+
+Command Line Interface to manage *todo.txt*
 
 ## License
 
-todotoo - a command line interface to manage your todo.txt tasks  
+todotoo - command line interface to manage todo.txt  
 Copyright (C) 2015  Robert van Bregt
 
 This program is free software: you can redistribute it and/or modify

@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 
-# todo.txt task manager cli
+# todotoo - command line interface to manage todo.txt
 # Copyright (C) 2015 Robert van Bregt
-# 
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -30,10 +30,10 @@ def todo_arguments():
     parser = argparse.ArgumentParser(description='Manage your TODO.TXT')
     parser.add_argument('-d', dest='config_file', default='./todo.conf',
                         help='path to todo.txt')
-    parser.add_argument('action', 
+    parser.add_argument('action',
                         help='the action to execute')
     return parser.parse_args()
- 
+
 def todo_config(config_file):
     config = ConfigParser.ConfigParser()
     config.read(config_file)
@@ -64,7 +64,7 @@ def list_todos(results, numbers = 1):
 
 if __name__ == "__main__":
     args = todo_arguments()
-    
+
     config = todo_config(args.config_file)
 
     todo_path = config.get('files', 'todo_dir')
@@ -74,5 +74,5 @@ if __name__ == "__main__":
     # at this time, just list file contents
     todos = read_todos(todo_filepath)
     list_todos(todos)
-    
+
     sys.exit()
