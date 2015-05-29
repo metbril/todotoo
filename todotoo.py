@@ -28,8 +28,8 @@ __license__   = "GPL"
 
 def todo_arguments():
     parser = argparse.ArgumentParser(description='Manage your TODO.TXT')
-    parser.add_argument('-d', dest='config_file', default='./todo.conf',
-                        help='path to todo.txt')
+    parser.add_argument('-c', dest='config_file', default='./todotoo.conf',
+                        help='path to config file')
     parser.add_argument('action',
                         help='the action to execute')
     return parser.parse_args()
