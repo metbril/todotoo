@@ -26,6 +26,12 @@ __author__    = "Robert van Bregt (robert@robertvanbregt.nl)"
 __copyright__ = "Copyright 2015, Robert van Bregt"
 __license__   = "GPL"
 
+def add_action(args):
+    if (DEBUG):
+        print('action: ' + args.action)
+        print('text:   ' + args.todo_text)
+    pass
+
 def todo_arguments():
     parser = argparse.ArgumentParser(description='Manage your TODO.TXT')
     parser.add_argument('-d', dest='config_file', default='./todo.conf',
