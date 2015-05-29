@@ -36,8 +36,25 @@ def todo_arguments():
     parser = argparse.ArgumentParser(description='Manage your TODO.TXT')
     parser.add_argument('-d', dest='config_file', default='./todo.conf',
                         help='path to todo.txt')
-    parser.add_argument('action',
-                        help='the action to execute')
+    subparsers = parser.add_subparsers(dest='action',
+                                   title='subcommands',
+                                   description='valid subcommands',
+                                   help='valid subcommands')
+
+    # list
+    subparser_list = subparsers.add_parser('list',
+                                          help='list todos')
+    subparser_list.add_argument('expr', nargs='?', default=[''],
+                               help='filter expression')
+    subparser_list.set_defaults(func=list_action)
+
+    # ls
+    subparser_ls = subparsers.add_parser('ls',
+                                          help='list todos')
+    subparser_ls.add_argument('expr', nargs='?', default=[''],
+                               help='filter expression')
+    subparser_ls.set_defaults(func=list_action)
+
     return parser.parse_args()
 
 def todo_config(config_file):
