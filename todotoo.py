@@ -26,11 +26,12 @@ __author__    = "Robert van Bregt (robert@robertvanbregt.nl)"
 __copyright__ = "Copyright 2015, Robert van Bregt"
 __license__   = "GPL"
 
-def add_action(args):
+def list_action(args):
+
     if (DEBUG):
-        print('action: ' + args.action)
-        print('text:   ' + args.todo_text)
-    pass
+        print(args)
+
+    list_todos(todos, args.plain)
 
 def todo_arguments():
     parser = argparse.ArgumentParser(description='Manage your TODO.TXT')
@@ -72,14 +73,14 @@ def read_todos(todo_filepath):
         todos.append(item)
     return todos
 
-def list_todos(results, numbers = 1):
+def list_todos(results, numbers = False):
     if len(results) == 0:
         #empty list
         print("No results.")
     else:
         i = 1
         for item in results:
-            if numbers == 1:
+            if numbers :
                 print("{0}. {1}".format(i, item))
             else:
                 print(item)
